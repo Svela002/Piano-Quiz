@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MittProsjekt.MenuController">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Button layoutX="36.0" layoutY="187.0" mnemonicParsing="false" onAction="#switchToQuiz" text="Start" />
+            <AnchorPane layoutX="36.0" layoutY="234.0" prefHeight="104.0" prefWidth="208.0">
+               <children>
+                  <Text fill="#0d0d0d" layoutX="8.0" layoutY="37.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Instillinger:" />
+                  <CheckBox fx:id="HalfToneChordsBox" layoutX="8.0" layoutY="77.0" minWidth="-Infinity" mnemonicParsing="false" onAction="#changeHalfNoteChords" prefHeight="18.0" prefWidth="200.0" text="Ha med halvtoners akkorder" />
+                  <CheckBox fx:id="MinorChordsBox" layoutX="8.0" layoutY="59.0" minWidth="-Infinity" mnemonicParsing="false" onAction="#changeMinorChords" prefWidth="200.0" text="Ha med Moll-akkorder" />
+                  <CheckBox fx:id="MajorChordsBox" layoutX="8.0" layoutY="41.0" minWidth="-Infinity" mnemonicParsing="false" onAction="#changeMajorChords" prefWidth="200.0" selected="true" text="Ha med Dur-akkorder" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="318.0" layoutY="49.0" prefHeight="328.0" prefWidth="307.0">
+               <children>
+                  <Button layoutX="26.0" layoutY="227.0" mnemonicParsing="false" onAction="#exportLeaderBoard" text="Lagre Leaderboard" />
+                  <Button layoutX="154.0" layoutY="227.0" mnemonicParsing="false" onAction="#importLeaderBoard" text="Importer Leaderboard" />
+                  <GridPane gridLinesVisible="true" layoutX="54.0" layoutY="14.0" prefHeight="195.0" prefWidth="200.0">
+                    <columnConstraints>
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="63.0" minHeight="10.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="122.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="175.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="175.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="175.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="175.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="175.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="175.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name:" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Score:" GridPane.columnIndex="1" />
+                        <Label fx:id="name1Label" text="Name1" GridPane.rowIndex="1" />
+                        <Label fx:id="score1Label" text="Score1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="name2Label" text="Name2" GridPane.rowIndex="2" />
+                        <Label fx:id="score2Label" text="Score2" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label fx:id="name3Label" text="Name3" GridPane.rowIndex="3" />
+                        <Label fx:id="score3Label" text="Score3" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label fx:id="name4Label" text="Name4" GridPane.rowIndex="4" />
+                        <Label fx:id="score4Label" text="Score4" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label fx:id="name5Label" text="Name5" GridPane.rowIndex="5" />
+                        <Label fx:id="score5Label" text="Score5" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Label fx:id="name6Label" text="Name6" GridPane.rowIndex="6" />
+                        <Label fx:id="score6Label" text="Score6" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <Label fx:id="name7Label" text="Name7" GridPane.rowIndex="7" />
+                        <Label fx:id="score7Label" text="Score7" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+            <Label fx:id="ReminderLabel" layoutX="244.0" layoutY="277.0" />
+            <Text fill="#f2c3a3" layoutX="36.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Akkord-">
+               <font>
+                  <Font name="Segoe Print" size="44.0" />
+               </font>
+            </Text>
+            <Text fill="#f2c3a3" layoutX="43.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quiz">
+               <font>
+                  <Font name="Segoe Print" size="36.0" />
+               </font>
+            </Text>
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>
