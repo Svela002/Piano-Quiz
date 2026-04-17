@@ -19,7 +19,7 @@ public class Chord {
     public Chord(Note note, boolean isMajor) {
         ArrayList<Note> chordList= new ArrayList<>(List.of(note));
 
-        if (isMajor) {
+        if (isMajor==true) {
             note.makeMajorScale(note);
             Scale=note.getMajorScale();
             ChordName=note.getNote();
@@ -84,18 +84,18 @@ public class Chord {
 
     public static Chord makeRandomChord() { //Lager en tilfeldig akkord, se getRandomNote() for videre kontekst.
         if (Settings.isMajorChords()&&!Settings.isMinorChords()) {
-                return new Chord(Note.getRandomNote(), true);
+                return new Chord(Note.getRandomMajorNote(), true);
             }
         else if (!Settings.isMajorChords()&&Settings.isMinorChords()) {
-            return new Chord(Note.getRandomNote(), false);
+            return new Chord(Note.getRandomMinorNote(), false);
         }
         else {
             int isMajorRandom = new Random().nextInt(0,2); //50/50 mellom dur og moll akkord, for når begge er tillat
             if (isMajorRandom==1) {
-                return new Chord(Note.getRandomNote(), true );
+                return new Chord(Note.getRandomMajorNote(), true );
             }
             else {
-                return new Chord(Note.getRandomNote(), false);
+                return new Chord(Note.getRandomMinorNote(), false);
             }
             
         }
@@ -123,13 +123,16 @@ public class Chord {
         return "Note: " + chordList.getFirst() + " Chord: " + chordList + " ChordName: " + getChordName();
     }
 
-    public static void main(String[] args) {
-        Chord C_shuffled = new Chord();
-        C_shuffled.addNoteToChord(new Note("E"));
-        C_shuffled.addNoteToChord(new Note("G"));
-        C_shuffled.addNoteToChord(new Note("C"));
-        System.out.println(C_shuffled);
-        System.out.println(C_shuffled.sortChord());
-    }
+    // public static void main(String[] args) {
+        // Chord C_shuffled = new Chord();
+        // C_shuffled.addNoteToChord(new Note("E"));
+        // C_shuffled.addNoteToChord(new Note("G"));
+        // C_shuffled.addNoteToChord(new Note("C"));
+        // System.out.println(C_shuffled);
+        // System.out.println(C_shuffled.sortChord());
+        // Note Csnote= new Note("C#");
+        // Chord Cschord= new Chord(Csnote, true);
+        // System.out.println(Cschord);
+    // }
 
 }
