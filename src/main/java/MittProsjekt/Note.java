@@ -149,28 +149,30 @@ public class Note{
         return new Note(PromptedMinorNotes.get(new Random().nextInt(12)));
     }
 
-    public static Note getRandomNote() { //Gir en tilfeldig note mht. notasjon, static.
-        if (!Settings.isHalfToneChords()) {
-            return new Note(BaseNotes.get(new Random().nextInt(7)));
-        }
 
-        if (Settings.isMajorChords()&&!Settings.isMinorChords()) {
-                return getRandomMajorNote();
-            }
-        else if (!Settings.isMajorChords()&&Settings.isMinorChords()) {
-            return getRandomMinorNote();
-        }
-        else {
-            int isMajorRandom = new Random().nextInt(0,2); //50/50 mellom dur og moll akkord, for når begge er tillat
-            if (isMajorRandom==1) {
-                return getRandomMajorNote();
-            }
-            else {
-                return getRandomMinorNote();
-            }
+    //Gammel, unødvendig
+    // public static Note getRandomNote() { //Gir en tilfeldig note mht. notasjon, static.
+    //     if (!Settings.isHalfToneChords()) {
+    //         return new Note(BaseNotes.get(new Random().nextInt(7)));
+    //     }
+
+    //     if (Settings.isMajorChords()&&!Settings.isMinorChords()) {
+    //             return getRandomMajorNote();
+    //         }
+    //     else if (!Settings.isMajorChords()&&Settings.isMinorChords()) {
+    //         return getRandomMinorNote();
+    //     }
+    //     else {
+    //         int isMajorRandom = new Random().nextInt(0,2); //50/50 mellom dur og moll akkord, for når begge er tillat
+    //         if (isMajorRandom==1) {
+    //             return getRandomMajorNote();
+    //         }
+    //         else {
+    //             return getRandomMinorNote();
+    //         }
             
-        }
-    }
+    //     }
+    // }
 
     public String getNote() {
         return noteValue;
@@ -214,30 +216,34 @@ public class Note{
 
         // return("Note: " + getNote() + " Majorscale: " + MajorScaleValue.stream().map(Note::getNote).toList() +
         //      "\nNote: " + getNote() + " Minorscale: " + MinorScaleValue.stream().map(Note::getNote).toList());
-        return noteValue;
+        return noteValue; 
         
     }
 
-    public static void main(String[] args) {
-        Note Cnote = new Note("C");
-        Note Bnote = new Note ("B");
-        Note Dnote = new Note ("D");
-        Note Ebnote = new Note ("Eb");
-        Note Dsnote = new Note ("D#");
-        Cnote.makeMajorScale(Cnote);
-        Cnote.MakeMinorScale(Dsnote);
-        System.out.println(Cnote);
-        Bnote.makeMajorScale(Bnote);
-        Bnote.MakeMinorScale(Dsnote);
-        System.out.println(Bnote);
-        Dnote.makeMajorScale(Dnote);
-        Dnote.MakeMinorScale(Dsnote);
-        System.out.println(Dnote);
-        Ebnote.makeMajorScale(Ebnote);
-        Ebnote.MakeMinorScale(Dsnote);
-        System.out.println(Ebnote);
-        Dsnote.makeMajorScale(Dsnote);
-        Dsnote.MakeMinorScale(Dsnote);
-        System.out.println(Dsnote);
-    }
+    // public static void main(String[] args) {
+    //     Note Cnote = new Note("C");
+    //     Note Csnote= new Note("C#");
+    //     Note Bnote = new Note ("B");
+    //     Note Dnote = new Note ("D");
+    //     Note Ebnote = new Note ("Eb");
+    //     Note Dsnote = new Note ("D#");
+    //     Cnote.makeMajorScale(Cnote);
+    //     Cnote.MakeMinorScale(Cnote);
+    //     System.out.println(Cnote);
+    //     Csnote.makeMajorScale(Csnote);
+    //     Csnote.MakeMinorScale(Csnote);
+    //     System.out.println(Csnote);
+    //     Bnote.makeMajorScale(Bnote);
+    //     Bnote.MakeMinorScale(Bnote);
+    //     System.out.println(Bnote);
+    //     Dnote.makeMajorScale(Dnote);
+    //     Dnote.MakeMinorScale(Dnote);
+    //     System.out.println(Dnote);
+    //     Ebnote.makeMajorScale(Ebnote);
+    //     Ebnote.MakeMinorScale(Ebnote);
+    //     System.out.println(Ebnote);
+    //     Dsnote.makeMajorScale(Dsnote);
+    //     Dsnote.MakeMinorScale(Dsnote);
+    //     System.out.println(Dsnote);
+    // }
 }
